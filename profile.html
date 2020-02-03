@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./helpers.css">
+    <title>Ido Kabelly</title>
+</head>
+<body>
+    <main>
+        <section class="img-section flex justify-center">
+            <img id="profile-pic" src="./profile-pic.png" alt="">
+        </section>
+        <section class="profile-section flex justify-center">
+            <div>
+                <div class="header">
+                    <h1 class="profile-title">
+                        Ido Kabelly
+                    </h1>
+                    <h3 class="profile-subtitle">
+                        a NodeJS Fullstack Developer
+                    </h3>
+                </div>
+                <div class="hr"></div>
+                <div class="profile-body"></div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    window.onload = setApp;
+    var FIXED = 'fixed';
+
+    function setApp(){
+        var imgHeight = setImg();
+        window.onscroll = function(event){
+            handleScroll(event, imgHeight);
+        }
+    }
+
+    function setImg(){
+        var imgHeight = document.querySelector('#profile-pic').height;
+        var picSection = document.querySelector('section.img-section');
+        if(picSection){
+            picSection.setAttribute('style', `height: ${imgHeight}px`);
+        }
+        return imgHeight;
+    }
+
+    function handleScroll(event, imgHeight){
+        var img = document.querySelector('#profile-pic');
+        var height = window.innerHeight + window.pageYOffset;
+        if(height < imgHeight && img.style.position === FIXED){
+            img.setAttribute('style', `position: absolute;`);
+        }
+        if(height > imgHeight && img.style.position !== FIXED){
+            img.setAttribute('style', `position: fixed; top: -${window.pageYOffset}px;`);
+        }
+    }
+</script>
+</html>
