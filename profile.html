@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./helpers.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/helpers.css">
     <title>Ido Kabelly</title>
 </head>
 <body>
     <main>
         <section class="img-section flex justify-center">
-            <img id="profile-pic" src="./profile-pic.png" alt="">
+            <img id="profile-pic" src="./assets/img/profile-pic.png" alt="">
+            <div id="nav" class="navigator">
+                <img src="./assets/img/arrow-down.gif" alt="">
+            </div>
         </section>
         <section class="profile-section flex justify-center">
             <div>
@@ -38,6 +41,9 @@
         window.onscroll = function(event){
             handleScroll(event, imgHeight);
         }
+        document.querySelector('#nav').addEventListener('click', function(){
+                onNavClick(imgHeight);
+            });
     }
 
     function setImg(){
@@ -50,14 +56,21 @@
     }
 
     function handleScroll(event, imgHeight){
-        var img = document.querySelector('#profile-pic');
+        var profilePic = document.querySelector('#profile-pic');
+        var nav = document.querySelector('#nav');
         var height = window.innerHeight + window.pageYOffset;
-        if(height < imgHeight && img.style.position === FIXED){
-            img.setAttribute('style', `position: absolute;`);
+        if(height < imgHeight && profilePic.style.position === FIXED){
+            profilePic.setAttribute('style', `position: absolute;`);
+            nav.setAttribute('style', `position: fixed;`);
         }
-        if(height > imgHeight && img.style.position !== FIXED){
-            img.setAttribute('style', `position: fixed; top: -${window.pageYOffset}px;`);
+        if(height > imgHeight && profilePic.style.position !== FIXED){
+            profilePic.setAttribute('style', `position: fixed; top: -${window.pageYOffset}px;`);
+            nav.setAttribute('style', `position: absolute;`);
         }
+    }
+
+    function onNavClick(imgHeight){
+        window.scrollTo({ top: imgHeight, behavior: 'smooth' });
     }
 </script>
 </html>
