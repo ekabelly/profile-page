@@ -1,0 +1,14 @@
+@media (min-width: 640px){
+    .navigator {
+        cursor: pointer;
+    }
+
+    .profile-body .text, .profile-body .mevn-img {
+        width: 33%;
+    }
+
+    .img-section {
+        max-height: 0;
+        transition: linear max-height 1s;
+    }
+}

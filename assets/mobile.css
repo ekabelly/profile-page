@@ -1,0 +1,14 @@
+@media (max-width: 640px){
+    #profile-pic {
+        position: fixed;
+    }
+
+    .navigator {
+        /* width: 100vw; */
+        display: none;
+    }
+
+    .profile-body {
+        flex-direction: column;
+    }
+}

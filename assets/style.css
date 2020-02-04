@@ -2,9 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: black;
+    background-color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    line-height: 1.64;
 }
 
 #profile-pic {
@@ -36,14 +37,17 @@ body {
 
 .profile-section {
     width: 100%;
-    height: 200vh;
+    height: 100vh;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.profile-section .header {
-    width: 800px;
+.profile-section-content {
+    width: 1000px;
     max-width: 100vw;
 }
+
+/* .profile-section .header {
+} */
 
 .profile-title, .profile-subtitle {
     font-weight: 300;
@@ -64,17 +68,35 @@ body {
     border-bottom: #727878 1px solid;
     width: 100%;
     opacity: .3;
+    margin: 40px 0;
+}
+
+.profile-body .text {
+    /* height: 500px; */
+    max-width: 300px;
+    color: #727878;
+}
+
+.profile-body .text .profile-body-subtitle {
+    margin: 20px 0;
+    font-size: 28px;
+    color: #206261;
+}
+
+.profile-body .text .details-subtitle {
+    color: #434242;
+    font-weight: bold;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
 
 ::-webkit-scrollbar-track {
-    background-color: transperent;
+    background-color: #434242;
   }
   ::-webkit-scrollbar {
     display: block;
     width: 4px;
-    background-color: transperent;
+    background-color: #434242;
   }
   ::-webkit-scrollbar-thumb {
     display: block;
