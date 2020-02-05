@@ -10,34 +10,49 @@ body {
 
 #profile-pic {
     z-index: -1;
-    width: 100vw;
     position: absolute;
     top: 0;
     /* filter: grayscale(1); */
 }
 
-.img-section {
-    position: relative;
+.welcome {
+    position: absolute;
+    color: aliceblue;
+    text-align: center;
 }
 
-.navigator {
-    /* position: fixed;
-    top: calc(100vh - 300px); */
-    background-color: rgba(255, 255, 255, 0.8);
-    height: fit-content;
-    position: fixed;
-    bottom: 0;
+.welcome .name .line, .welcome .name .bottom-line {
+    border-bottom: aliceblue 1px solid;
+}
+
+.img-section {
+    position: relative;;
+}
+
+.arrow-down, .nav {
     right: 5%;
 }
 
-.navigator img {
+.arrow-down, .nav-item {
+    height: 87.5px;
+    width: 110px;
+}
+
+.arrow-down {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    bottom: 0;
+}
+
+.arrow-down img {
     width: 110px;
     height: 80px;
 }
 
 .profile-section {
+    position: relative;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -45,9 +60,6 @@ body {
     width: 1000px;
     max-width: 100vw;
 }
-
-/* .profile-section .header {
-} */
 
 .profile-title, .profile-subtitle {
     font-weight: 300;
@@ -57,6 +69,7 @@ body {
 .profile-title {
     color: #206261;
     font-size: 54px;
+    font-weight: 600;
 }
 
 .profile-subtitle {
@@ -68,13 +81,19 @@ body {
     border-bottom: #727878 1px solid;
     width: 100%;
     opacity: .3;
-    margin: 40px 0;
+    margin-block-end: 2em;
+    margin-block-start: 2em;
+}
+
+.profile-body {
+    margin-bottom: 80px;
 }
 
 .profile-body .text {
     /* height: 500px; */
     max-width: 300px;
     color: #727878;
+    font-size: 18px;
 }
 
 .profile-body .text .profile-body-subtitle {
@@ -88,14 +107,40 @@ body {
     font-weight: bold;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+.profile-section .footer {
+    margin-bottom: 80px;
+}
+
+.profile-section .footer a {
+    text-decoration: none;
+}
+
+.profile-section .footer img {
+    width: 150px;
+    height: 150px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.7,0,.3,1);
+}
+
+.arrow-down.to-experience {
+    background-color: rgba(121, 55, 128, 0.6);
+}
+
+.experience {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(121, 55, 128, 0.3);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap');
 
 ::-webkit-scrollbar-track {
     background-color: #434242;
   }
   ::-webkit-scrollbar {
     display: block;
-    width: 4px;
+    width: 10px;
     background-color: #434242;
   }
   ::-webkit-scrollbar-thumb {

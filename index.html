@@ -8,27 +8,53 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/desktop.css">
     <link rel="stylesheet" href="./assets/mobile.css">
+    <script type="text/javascript" src="js/index.js">
+    </script>
     <title>Ido Kabelly</title>
 </head>
 <body>
     <main>
         <section class="img-section flex justify-center">
             <img id="profile-pic" src="./assets/img/profile-pic-lazy-worst.jpg" alt="">
-            <div id="nav" class="navigator">
+            <div class="welcome">
+                <div class="hi">
+                    Hi, I'm
+                </div>
+                <div class="name flex align-center">
+                    <div class="line"></div>
+                    <div class="text">
+                        Ido Kabelly
+                        <div class="bottom-line"></div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div id="arrow-down" class="arrow-down">
                 <img src="./assets/img/arrow-down.gif" alt="">
+            </div>
+            <div class="nav">
+                <div class="nav-item" id="profile-link">
+                    Profile
+                </div>
+                <div class="nav-item" id="xp-link">
+                    Experience
+                </div>
             </div>
         </section>
         <section class="profile-section flex justify-center">
-            <div class="profile-section-content">
+            <div class="profile-section-content  flex flex-column space-around">
                 <div class="header">
                     <h1 class="profile-title">
-                        Ido Kabelly
+                        <!-- Ido Kabelly -->
+                        NodeJS Fullstack Developer
                     </h1>
-                    <h3 class="profile-subtitle">
-                        a NodeJS Fullstack Developer
-                    </h3>
+                    <div class="mevn-img flex justify-center align-center">
+                        <img src="./assets/img/mevn.png" alt="">
+                    </div>
+                    <!-- <h3 class="profile-subtitle">
+                    </h3> -->
+                    <div class="hr"></div>
                 </div>
-                <div class="hr"></div>
                 <div class="profile-body flex space-between">
                     <div class="text">
                         <div class="profile-body-subtitle">
@@ -82,95 +108,24 @@
                         </p>
                     </div>
                 </div>
+                <div class="footer flex justify-center">                    
+                    <div>
+                        <a href="mailto:ekabelly@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/img/gmail.png" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/in/ido-kabelly/" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/img/linkedin.jpg" alt="">
+                        </a>
+                        <a href="https://github.com/ekabelly" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/img/github.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
+        <section class="experience">
+            
         </section>
     </main>
 </body>
-<script>
-    window.onload = function(){
-        new PageSetup();
-    }
-    var FIXED = 'fixed';
-    var PROFILE_PIC_SRC_ARR = [
-        'profile-pic-lazy-worst.jpg', 
-        'profile-pic-lazy.png',
-        'profile-pic.png'
-    ];
-
-    function PageSetup(){
-        var state = {
-            profilePicLoadingPhase: 0,
-            isMobile: window.innerWidth <= 640
-        }
-        main();
-
-        function main(){
-            var imgHeight = setImg();
-            if(!state.isMobile){
-                window.onscroll = function(event){
-                    handleScroll(event, imgHeight);
-                }
-            }
-            document.querySelector('#nav').addEventListener('click', function(){
-                    onNavClick(imgHeight);
-                });
-            setBirthDate();
-        }
-
-        function setImg(){
-            handleLazyLoading();
-            var imgHeight = document.querySelector('#profile-pic').height;
-            var picSection = document.querySelector('section.img-section');
-            if(picSection){
-                picSection.setAttribute('style', `max-height: ${imgHeight}px; height: ${imgHeight}px;`);
-            }
-            return imgHeight;
-        }
-
-        function handleScroll(event, imgHeight){
-            var profilePic = document.querySelector('#profile-pic');
-            var nav = document.querySelector('#nav');
-            var height = window.innerHeight + window.pageYOffset;
-            if(height < imgHeight && profilePic.style.position === FIXED){
-                profilePic.setAttribute('style', `position: absolute;`);
-                nav.setAttribute('style', `position: fixed;`);
-            }
-            if(height > imgHeight && profilePic.style.position !== FIXED){
-                profilePic.setAttribute('style', `position: fixed; top: calc(100vh - ${imgHeight}px);`);
-                nav.setAttribute('style', `position: absolute;`);
-            }
-        }
-
-        function onNavClick(imgHeight){
-            window.scrollTo({ top: imgHeight, behavior: 'smooth' });
-        }
-
-        function calcAge(){
-            var timeDiff = Math.abs(new Date().getTime() - new Date('12/28/1991').getTime());
-            return Math.floor(Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365);
-        }
-
-        function setBirthDate(){
-            var age = calcAge();
-            document.getElementById('age').innerHTML = age;
-        }
-
-        function handleLazyLoading(){
-            const pic = document.querySelector('#profile-pic');
-            if(pic.complete){
-                profilePicLoaded(pic);
-            }
-            pic.onload = function(){
-                profilePicLoaded(pic);
-            }
-        }
-
-        function profilePicLoaded(pic){
-            state.profilePicLoadingPhase++;
-            if(PROFILE_PIC_SRC_ARR[state.profilePicLoadingPhase]){
-                pic.src = `./assets/img/${PROFILE_PIC_SRC_ARR[state.profilePicLoadingPhase]}`;
-            }
-        }
-    }
-</script>
 </html>

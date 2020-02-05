@@ -1,14 +1,62 @@
 @media (min-width: 640px){
-    .navigator {
+    .arrow-down {
         cursor: pointer;
     }
 
-    .profile-body .text, .profile-body .mevn-img {
-        width: 33%;
+    .img-section {
+        min-height: 100vh;
     }
 
-    .img-section {
-        max-height: 0;
-        transition: linear max-height 1s;
+    #profile-pic {
+        width: 100vw;
+    }
+
+    .profile-section .header .mevn-img {
+        display: none;
+    }
+
+    .profile-section .footer img:hover {
+        transform: scale(1.15);
+    }
+
+    .nav {
+        background-color: rgba(37, 34, 34, .8);
+        position: absolute;
+        bottom: -175px;
+        z-index: 1;
+        color: rgba(255, 255, 255, 0.8);
+        transition: color .2s;
+    }
+    
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .welcome {
+        position: absolute;
+        top: 37vh;
+        left: 8vw;
+        color: aliceblue;
+        text-align: center;
+    }
+    
+    .welcome .hi {
+        font-size: 26px;
+        font-style: italic;
+    }
+    
+    .welcome .name {
+        font-size: 58px;
+        font-weight: 600;
+    }
+
+    .welcome .name .line  {
+        width: 70px;
+        margin: 0 15px;
     }
 }
