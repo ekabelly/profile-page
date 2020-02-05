@@ -27,16 +27,14 @@ function PageSetup(){
     }
 
     function handleClickListeners(imgHeight){
-        var profileSectionHeight =  document.querySelector('.profile-section').getBoundingClientRect().height;
-        var scrollHeight = imgHeight - (window.innerHeight - profileSectionHeight);
         document.querySelector('#arrow-down').addEventListener('click', function(){
-            smoothScrollTo(scrollHeight);
+                smoothScrollTo(imgHeight);
         });
         document.querySelector('#profile-link').addEventListener('click', function(){
-                smoothScrollTo(scrollHeight);
+                smoothScrollTo(imgHeight);
         });
         document.querySelector('#xp-link').addEventListener('click', function(){
-                smoothScrollTo(imgHeight + window.innerHeight);
+                smoothScrollTo(imgHeight + document.querySelector('.profile-section').getBoundingClientRect().height);
         });
     }
 
