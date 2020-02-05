@@ -59,4 +59,8 @@
         width: 70px;
         margin: 0 15px;
     }
+
+    .welcome .name .bottom-line  {
+        display: none;
+    }
 }
