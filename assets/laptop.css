@@ -1,0 +1,5 @@
+@media (min-width: 640px) and (max-width: 1800px){
+    .profile-section .profile-body .text {
+        width: 25vw;
+    }
+}

@@ -23,7 +23,6 @@ function PageSetup(){
             }
         }
         handleClickListeners(imgHeight);
-        setBirthDate();
     }
 
     function handleClickListeners(imgHeight){
@@ -72,7 +71,7 @@ function PageSetup(){
         if(window.pageYOffset > imgHeight -  87.5){
             var style = 'position: fixed; top: 87.5px; bottom: auto;';
             if(window.pageYOffset > (imgHeight - 175 + document.querySelector('.profile-section').getBoundingClientRect().height)){
-                style += 'color: rgba(121, 55, 128, 1);';
+                style += 'color: rgba(243, 239, 224, 1)';
             }
             nav.setAttribute('style', style);
         } else {
@@ -82,16 +81,6 @@ function PageSetup(){
 
     function smoothScrollTo(top){
         window.scrollTo({ top, behavior: 'smooth' });
-    }
-
-    function calcAge(){
-        var timeDiff = Math.abs(new Date().getTime() - new Date('12/28/1991').getTime());
-        return Math.floor(Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365);
-    }
-
-    function setBirthDate(){
-        var age = calcAge();
-        document.getElementById('age').innerHTML = age;
     }
 
     function handleLazyLoading(){

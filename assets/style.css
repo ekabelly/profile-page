@@ -8,6 +8,11 @@ body {
     line-height: 1.64;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 #profile-pic {
     z-index: -1;
     position: absolute;
@@ -66,7 +71,7 @@ body {
     text-align: center;
 }
 
-.profile-title {
+.section-title {
     color: #206261;
     font-size: 54px;
     font-weight: 600;
@@ -91,10 +96,34 @@ body {
 
 .profile-body .text {
     /* height: 500px; */
-    max-width: 300px;
     color: #727878;
     font-size: 18px;
 }
+
+/* .node-js, .vue-js, .js {
+    -webkit-background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.react {
+    color:#61DBFB;
+}
+
+.node-js {
+    background-image: linear-gradient(to left, #303030, #68a063, #3c873a);  
+}
+
+.vue-js {
+    background-image: linear-gradient(to left, #34495E, #41B883);  
+}
+
+.js {
+    background-image: linear-gradient(to left, #323330, #F0DB4F);  
+} */
 
 .profile-body .text .profile-body-subtitle {
     margin: 20px 0;
@@ -116,8 +145,8 @@ body {
 }
 
 .profile-section .footer img {
-    width: 150px;
-    height: 150px;
+    width: 75px;
+    height: 75px;
     margin: 0 15px;
     cursor: pointer;
     transition: all .5s cubic-bezier(.7,0,.3,1);
@@ -127,10 +156,52 @@ body {
     background-color: rgba(121, 55, 128, 0.6);
 }
 
-.experience {
+.experience-section {
     height: 100vh;
     width: 100%;
-    background-color: rgba(121, 55, 128, 0.3);
+    color: #727878;
+    background-color: rgba(243, 239, 224, 0.8);
+}
+
+.experience-section-content {
+    /* background-color: rgba(121, 55, 128, 0.3); */
+    width: 1000px;
+    max-width: 100vw;
+    /* position: relative; */
+}
+
+.experience-section-subtitle {
+    margin: 0;
+    font-weight: normal;
+}
+
+.experience-content .desc {
+    min-width: 30%;
+}
+
+.experience-content .content ul {
+    
+}
+
+.experience-content .footer {
+    color: #206261;
+}
+
+.experience-content .footer .separator {
+    border-left: 1px solid #727878;
+    opacity: .3;
+    height: 17px;
+    margin: 0 10px;
+}
+
+.experience-content .footer .location img, .experience-content .footer .link img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.experience .present .title {
+    font-weight: bold;
+    /* color: rgba(243, 239, 224, 0.8); */
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap');
