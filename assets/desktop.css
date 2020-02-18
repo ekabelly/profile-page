@@ -15,12 +15,21 @@
         display: none;
     }
 
+    .profile-section .footer img {
+        opacity: 0;
+    }
+
     .profile-section .footer img:hover {
         transform: scale(1.15);
     }
 
     .profile-body .text {
         width: 15vw;
+        opacity: 0;
+    }
+
+    .profile-section .mevn-img {
+        opacity: 0;
     }
 
     .nav {

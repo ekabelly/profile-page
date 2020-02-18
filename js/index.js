@@ -50,6 +50,7 @@ function PageSetup(){
     function handleScroll(imgHeight){
         handleProfilePicOnScroll(imgHeight);
         handleNavOnScroll(imgHeight);
+        collectElmntsToAnimate();
     }
 
     function handleProfilePicOnScroll(imgHeight){
@@ -76,6 +77,25 @@ function PageSetup(){
             nav.setAttribute('style', style);
         } else {
             nav.setAttribute('style', 'position: absolute; color: rgba(255, 255, 255, 0.8);');
+        }
+    }
+
+    function collectElmntsToAnimate(){
+        const elmntsArr = document.querySelectorAll('.to-be-faded');
+        for (const elmnt of elmntsArr) {
+            handleAnimationOnScroll(elmnt);
+        }
+    }
+
+    function handleAnimationOnScroll(elmnt){
+        try {
+            // const elmnt = document.querySelector(selector);
+            const {height, y} = elmnt.getBoundingClientRect();
+            if(((height + y) - (height * 2 / 3)) < window.innerHeight){
+                elmnt.classList.add('fade-in-bottom');
+            }
+        }catch (e){
+            console.log(e);
         }
     }
 
