@@ -77,22 +77,12 @@
         display: none;
     }
 
-    .experience .present, .experience .education {
-        /* max-width: 30vw; */
-        /* border-radius:  0 10px 10px 0; */
-        /* border-radius: 10px; */
-        /* box-shadow:  0 6px 11px 0 rgba(0, 0, 0, 0.1); */
-    }
-
-    .experience .present {
-        /* top: 15vh;
-        left: 10vw; */
-    }
-
     .experience .education {
-        /* top: 55vh;
-        right: 10vw; */
         width: 616px;
         height: 303px;
+    }
+
+    .to-be-faded {
+        opacity: 0;
     }
 }
