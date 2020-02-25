@@ -99,6 +99,12 @@ function PageSetup(){
             const {height, y} = elmnt.getBoundingClientRect();
             if(((height + y) - (height * 2 / 3)) < window.innerHeight){
                 elmnt.classList.add('fade-in-bottom');
+                if(elmnt.tagName === 'IMG'){
+                    setTimeout(function(){
+                        // removing class after animation so other animations can be applied.
+                        removeAnimationClass(elmnt);
+                    }, 1000);
+                }
             }
         }catch (e){
             console.log(e);
@@ -124,5 +130,10 @@ function PageSetup(){
         if(PROFILE_PIC_SRC_ARR[state.profilePicLoadingPhase]){
             pic.src = `./assets/img/${PROFILE_PIC_SRC_ARR[state.profilePicLoadingPhase]}`;
         }
+    }
+
+    function removeAnimationClass(elmnt){
+        elmnt.classList.remove('fade-in-bottom');
+        elmnt.classList.remove('to-be-faded');
     }
 }
