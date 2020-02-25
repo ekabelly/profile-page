@@ -18,8 +18,14 @@ function PageSetup(){
     function main(){
         var imgHeight = setImg() + 1;
         if(!state.isMobile){
+            // if desktop
             window.onscroll = function(){
                 handleScroll(imgHeight);
+            }
+        } else {
+            // if mobile, only add animations on scroll
+            window.onscroll = function(){
+                collectElmntsToAnimate();
             }
         }
         handleClickListeners(imgHeight);

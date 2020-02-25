@@ -11,6 +11,11 @@
         width: 100vw;
     }
 
+    .profile-section {
+        min-height: 100vh;
+        width: 100%;
+    }
+
     .profile-section .header .mevn-img {
         display: none;
     }
@@ -30,6 +35,10 @@
 
     .profile-section .mevn-img {
         opacity: 0;
+    }
+
+    .profile-section-content {
+        width: 1200px;
     }
 
     .nav {
@@ -63,7 +72,7 @@
         font-style: italic;
     }
     
-    .welcome .name {
+    .welcome .name h1 {
         font-size: 58px;
         font-weight: 600;
     }
@@ -82,7 +91,19 @@
         height: 303px;
     }
 
-    .to-be-faded {
-        opacity: 0;
+    .experience-section-content {
+        width: 1000px;
+    }
+
+    h1 {
+        margin: 45px 0;
+    }
+
+    .footer.mobile {
+        display: none;
+    }
+
+    section > div .desc.mobile {
+        display: none;
     }
 }
